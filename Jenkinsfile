@@ -1,7 +1,13 @@
-pipeline {  
+pipeline {
+  agent any
+ 
+  tools {nodejs "nodejs"}
+ 
   stages {
-    stage('Install') {
-      steps { sh 'npm install' }
+    stage('Example') {
+      steps {
+        sh 'npm install'
+      }
     }
   }
 }
