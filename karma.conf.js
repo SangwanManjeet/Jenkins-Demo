@@ -34,7 +34,19 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ["ChromeHeadless"],
+    browsers: ["ChromeHeadlessNoSandbox"],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: "ChromeHeadless",
+        flags: [
+          "--no-sandbox",
+          // required to run without privileges in Docker
+          "--disable-web-security",
+          "--disable-gpu",
+          "--remote-debugging-port=9222",
+        ],
+      },
+    },
     singleRun: true,
     restartOnFileChange: true,
   });
