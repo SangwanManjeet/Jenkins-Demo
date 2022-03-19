@@ -4,7 +4,13 @@ pipeline {
   tools {nodejs "nodejs"}
  
   stages {
-    stage('Example') {
+    stage('Install') {
+      steps {
+        sh 'npm install'     
+      }
+    }
+
+    stage('Test') {
       steps {
         sh 'npm run test'
       }
