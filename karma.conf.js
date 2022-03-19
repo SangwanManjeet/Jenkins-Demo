@@ -39,6 +39,7 @@ module.exports = function (config) {
       ChromeHeadlessNoSandbox: {
         base: "ChromeHeadless",
         flags: [
+          "--headless",
           "--no-sandbox",
           // required to run without privileges in Docker
           "--disable-web-security",
