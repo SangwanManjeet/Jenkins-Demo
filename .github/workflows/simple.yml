@@ -9,4 +9,6 @@ jobs:
       - name: Shell Command
         run: echo "Hello World"
       - name: Node Version
-        run: node -v
+        run: |
+          node -v
+          npm -v
