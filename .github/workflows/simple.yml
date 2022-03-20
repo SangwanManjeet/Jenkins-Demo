@@ -8,7 +8,9 @@ jobs:
     steps:
       - name: Shell Command
         run: echo "Hello World"
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Node Version
         run: |
-          node -v
+          npm install
           npm run test
