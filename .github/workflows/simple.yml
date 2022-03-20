@@ -1,6 +1,6 @@
 name: First Workflow
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   run-shell-command:
@@ -8,5 +8,9 @@ jobs:
     steps:
       - name: Shell Command
         run: echo "Hello World"
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Node Version
-        run: node -v
+        run: |
+          npm install
+          npm run test
