@@ -1,6 +1,6 @@
 name: First Workflow
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   run-shell-command:
@@ -11,4 +11,4 @@ jobs:
       - name: Node Version
         run: |
           node -v
-          npm -v
+          npm run test
