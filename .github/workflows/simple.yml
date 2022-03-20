@@ -1,0 +1,12 @@
+name: First Workflow
+
+on: [push, pull_request]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Shell Command
+        run: echo "Hello World"
+      - name: Node Version
+        run: node -v
